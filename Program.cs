@@ -49,7 +49,7 @@ namespace Proyecto_Final_Programación
                 case 1:
 
                     Console.WriteLine();
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Es intolerante o alergico a algún ingrediente? (si o no): ");
                     Console.ForegroundColor = ConsoleColor.Gray;
                     string intolerante = Console.ReadLine();
@@ -60,7 +60,9 @@ namespace Proyecto_Final_Programación
                         Console.WriteLine("No es una opción válida");
                         Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.Write("Es intolerante o alergico a algún ingrediente? (si o no): ");
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         intolerante = Console.ReadLine();
                     }
                     Console.WriteLine();

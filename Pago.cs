@@ -10,8 +10,8 @@ namespace Proyecto_Final_Programación
     {
         public static void Metodo()
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("-------------------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(@"____ ____ ____ _  _ ____    ___  ____    ___  ____ ____ ____
 |___ |  | |__/ |\/| |__|    |  \ |___    |__] |__| | __ |  |
 |    |__| |  \ |  | |  |    |__/ |___    |    |  | |__] |__|
@@ -33,13 +33,25 @@ namespace Proyecto_Final_Programación
 
 
 
-            Console.WriteLine("Desea Comprobante Fiscal: ");
+            Console.Write("Desea Comprobante Fiscal: ");
             string vComprobante = (Console.ReadLine());
+            while (vComprobante != "si" & vComprobante != "Si" & vComprobante != "no" & vComprobante != "No")
+            {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("No es una opción válida");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine();
+                Console.Write("Desea Comprobante Fiscal ");
+                vComprobante = Console.ReadLine();
+            }
             if (vComprobante == "Si" || vComprobante == "si")
             {
+                Console.WriteLine();
                 Console.WriteLine("Ingrese RNC: ");
                 string vRNC = (Console.ReadLine());
             }
+            Console.WriteLine();
             Console.WriteLine("Como desea Pagar");
             Console.WriteLine();
             Console.WriteLine("1. Efectivo");
@@ -53,9 +65,13 @@ namespace Proyecto_Final_Programación
             Console.Write("Elección: ");
             resultado = Console.ReadLine();
             Console.WriteLine();
-            while (!double.TryParse(resultado, out vOpcion))
+            while (!double.TryParse(resultado, out vOpcion) & vOpcion < 1 & vOpcion >3)
             {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No es una opción válida");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine();
                 Console.Write("Elección: ");
                 resultado = Console.ReadLine();
             }
@@ -68,19 +84,20 @@ namespace Proyecto_Final_Programación
                     vNombreCliente = Console.ReadLine();
                     Console.WriteLine("");
 
-                    Console.WriteLine("Ingrese con cuanto va a pagar: ");
-                    int vPago = int.Parse(Console.ReadLine());
+                    Console.Write("Ingrese con cuanto va a pagar: ");
+                    int vPago;
+                    resultado= Console.ReadLine();
 
-
-                    while (vPago < vTotalTodo)
+                    while (!int.TryParse(resultado, out vPago) & vPago < vTotalTodo)
                     {
+                        Console.WriteLine();
                         Console.WriteLine("Le faltan: {0} pesos", (vTotalTodo - vPago));
                         Console.Write("De mas dinero porfavor: ");
                         vPago += int.Parse(Console.ReadLine());
                     }
                     int devuelta = (int)(vPago - vTotalTodo);
 
-
+                    Console.WriteLine();
                     Console.WriteLine("     DEVUELTA");
                     int[] vMoneda = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
                     if (devuelta > 2000)
@@ -196,28 +213,20 @@ namespace Proyecto_Final_Programación
                     Console.Write("A nombre de quien es la tranferencia:  ");
                     vNombreCliente = Console.ReadLine();
 
-
-
-
                     break;
 
                 default:
                     Console.WriteLine("Porfavor ingrese una opcion valida");
                     break;
-
-
-
-
             }
 
-
             //Aprovacion del pago
-            Console.WriteLine("-----------");
+            Console.WriteLine("----------------------------------------------------------");
             Console.WriteLine("");
             Console.WriteLine("ESTIMADO: {0}", vNombreCliente);
             Console.WriteLine("");
             Console.WriteLine("Le notificamos que su a sido procesado de manera exitosa");
-            Console.WriteLine("      Adjunto encontrara su comprobante de pago");
+            Console.WriteLine("Adjunto encontrara su comprobante de pago");
             Console.WriteLine("");
 
             //Factura Final
@@ -259,7 +268,7 @@ namespace Proyecto_Final_Programación
             Console.WriteLine("CORREO: Ordes&Go@support.com");
             Console.WriteLine("");
             Console.WriteLine("Gracias Por Preferir Nuestros Servicios!");
+            Console.ReadKey();
         }
     }
-
 }
