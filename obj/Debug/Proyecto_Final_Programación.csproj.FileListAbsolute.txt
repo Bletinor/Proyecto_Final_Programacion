@@ -5,3 +5,10 @@ C:\Users\publi\Downloads\Proyecto_Final_Programación\Proyecto_Final_Programaci�
 C:\Users\publi\Downloads\Proyecto_Final_Programación\Proyecto_Final_Programación\obj\Debug\Proyecto_Final_Programación.csproj.CoreCompileInputs.cache
 C:\Users\publi\Downloads\Proyecto_Final_Programación\Proyecto_Final_Programación\obj\Debug\Proyecto_Final_Programación.exe
 C:\Users\publi\Downloads\Proyecto_Final_Programación\Proyecto_Final_Programación\obj\Debug\Proyecto_Final_Programación.pdb
+C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\bin\Debug\Proyecto_Final_Programación.exe.config
+C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\bin\Debug\Proyecto_Final_Programación.exe
+C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\bin\Debug\Proyecto_Final_Programación.pdb
+C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.csprojAssemblyReference.cache
+C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.csproj.CoreCompileInputs.cache
+C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.exe
+C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.pdb

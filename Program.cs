@@ -25,7 +25,7 @@ namespace Proyecto_Final_Programación
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("1. Ver nuestro menú ");
-            Console.WriteLine("2. Leer sobre nosotros ");
+            Console.WriteLine("2. Nuestro GitHub ");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
             Console.Write("Elección: ");
@@ -34,7 +34,9 @@ namespace Proyecto_Final_Programación
             while (!int.TryParse(resultado, out decision) | decision <1 | decision > 2)
             {
                 Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No es una opción válida");
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine();
                 Console.Write("Elección: ");
                 resultado = Console.ReadLine();
@@ -54,9 +56,11 @@ namespace Proyecto_Final_Programación
                     while (intolerante != "si" & intolerante != "no")
                     {
                         Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("No es una opción válida");
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine();
-                        Console.Write("Intentelo de nuevo: ");
+                        Console.Write("Es intolerante o alergico a algún ingrediente? (si o no): ");
                         intolerante = Console.ReadLine();
                     }
                     Console.WriteLine();

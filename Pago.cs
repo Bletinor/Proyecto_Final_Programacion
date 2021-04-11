@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Final_Programación
 {
-  class Pago
+    class Pago
     {
         public static void Metodo()
         {
@@ -24,11 +24,14 @@ namespace Proyecto_Final_Programación
             {
                 Console.WriteLine($"{Orden.cantidad[i]}x {Orden.pedido[i]} a {Orden.costo[i]} pesos con {Orden.itbis[i]} de ITBIS");
             }
-
-
-            string resultado = Console.ReadLine();
-
             decimal vTotalTodo = Orden.total.Sum();
+            Console.WriteLine();
+            Console.WriteLine("El total a pagar es: {0}", vTotalTodo);
+            Console.WriteLine();
+
+            string resultado;
+
+
 
             Console.WriteLine("Desea Comprobante Fiscal: ");
             string vComprobante = (Console.ReadLine());
@@ -43,8 +46,8 @@ namespace Proyecto_Final_Programación
             Console.WriteLine("2. Tarjeta");
             Console.WriteLine("3. Transferencia");
             Console.WriteLine();
-            Console.Write("Quien realiza el pago: ");
-            String vNombreCliente = Console.ReadLine();
+
+            string vNombreCliente = "";
 
             double vOpcion;
             Console.Write("Elección: ");
@@ -56,16 +59,6 @@ namespace Proyecto_Final_Programación
                 Console.Write("Elección: ");
                 resultado = Console.ReadLine();
             }
-
-            while (vOpcion > 3)
-            {
-                Console.WriteLine("--------------");
-                Console.WriteLine("Opcion ingresada no valida favor ingresar la correcta");
-                Console.WriteLine("Como desea Pagar " + "1.Efectivo 2.Tarjeta 3.Transferencia ");
-                vOpcion = double.Parse(Console.ReadLine());
-            }
-
-
 
             switch (vOpcion)
             {
@@ -156,13 +149,17 @@ namespace Proyecto_Final_Programación
                     Console.WriteLine("--------------");
                     Console.WriteLine("A nombre de quien esta la tarjeta: ");
                     vNombreCliente = Console.ReadLine();
+                    Console.WriteLine();
                     Console.WriteLine("Ingrese su numero de tarjeta: ");
                     string vNumeroT = (Console.ReadLine());
+                    Console.WriteLine();
                     string Text = vNumeroT.Substring(0, 1);
                     Console.WriteLine("Ingrese la fecha de vencimiento: ");
                     string vFechaVen = (Console.ReadLine());
+                    Console.WriteLine();
                     Console.WriteLine("Ingrese codigo de seguridad: : ");
                     string vCodigoSeg = (Console.ReadLine());
+                    Console.WriteLine();
 
                     if (Text == "4")
                     {
@@ -182,6 +179,7 @@ namespace Proyecto_Final_Programación
                     Console.Write("Ingrese cuanto va a despositar pagar: ");
                     int vPagoT;
                     resultado = Console.ReadLine();
+                    Console.WriteLine();
                     while (!int.TryParse(resultado, out vPagoT))
                     {
                         Console.WriteLine("No es una opción válida");
@@ -209,16 +207,18 @@ namespace Proyecto_Final_Programación
 
 
 
+
             }
+
+
             //Aprovacion del pago
             Console.WriteLine("-----------");
             Console.WriteLine("");
-            Console.WriteLine("ESTIMADO: {0}",vNombreCliente);
+            Console.WriteLine("ESTIMADO: {0}", vNombreCliente);
             Console.WriteLine("");
             Console.WriteLine("Le notificamos que su a sido procesado de manera exitosa");
             Console.WriteLine("      Adjunto encontrara su comprobante de pago");
             Console.WriteLine("");
-
 
             //Factura Final
             string vMetodoDePago;
@@ -236,13 +236,10 @@ namespace Proyecto_Final_Programación
             }
 
             Console.WriteLine("   ORDERS & GO");
-            Console.WriteLine("Comprobante de pago");
-            for (int i = 0; i < Orden.pedido.Count; i++)
-            {
-                Console.WriteLine($"{Orden.cantidad[i]}x {Orden.pedido[i]} a {Orden.costo[i]} pesos con {Orden.itbis[i]} de ITBIS");
-            }
+            Console.WriteLine(" Comprobante de pago");
 
-            Console.WriteLine("Recibimos de {0}: ",vNombreCliente);
+
+            Console.WriteLine("Recibimos de: {0} ", vNombreCliente);
             Console.WriteLine("");
             Console.WriteLine("La suma de: ");
             for (int i = 0; i < Orden.pedido.Count; i++)
@@ -250,12 +247,12 @@ namespace Proyecto_Final_Programación
                 Console.WriteLine($"{Orden.cantidad[i]}x {Orden.pedido[i]} a {Orden.costo[i]} pesos con {Orden.itbis[i]} de ITBIS");
             }
             Console.WriteLine("");
-            Console.WriteLine("Totales RD$: {0}",vTotalTodo);
+            Console.WriteLine("Totales RD$: {0}", vTotalTodo);
             Console.WriteLine("");
-            Console.WriteLine("Metodo de pago{0}", vMetodoDePago);
+            Console.WriteLine("Metodo de pago: {0} ", vMetodoDePago);
             Console.WriteLine("");
 
-            Console.WriteLine("Paracualquier duda o solicitud adicional puede contactarnos por estas vias: ");
+            Console.WriteLine("Para cualquier duda o solicitud adicional puede contactarnos por estas vias: ");
             Console.WriteLine("");
             Console.WriteLine("   ORDERS & GO");
             Console.WriteLine("TELEFONO: 809-534-0663");
@@ -264,4 +261,5 @@ namespace Proyecto_Final_Programación
             Console.WriteLine("Gracias Por Preferir Nuestros Servicios!");
         }
     }
+
 }
