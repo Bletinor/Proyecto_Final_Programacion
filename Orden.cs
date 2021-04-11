@@ -57,7 +57,11 @@ namespace Proyecto_Final_Programación
                 string resultado = Console.ReadLine();
                 while (!int.TryParse(resultado, out elecion) | elecion < 0 | elecion > 15)
                 {
-                    Console.WriteLine("Elección no válida");
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("No es una opción válida");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine();
                     Console.Write("Ingrese el número de lo que desea ordenar o ingrese 0 para terminar de ordenar: ");
                     resultado = Console.ReadLine();
                 }
@@ -72,8 +76,12 @@ namespace Proyecto_Final_Programación
                     resultado = Console.ReadLine();
                     while (!int.TryParse(resultado, out qty))
                     {
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("No es una opción válida");
-                        Console.Write("Elección: ");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.WriteLine();
+                        Console.Write("Ingrese la cantidad que desea: ");
                         resultado = Console.ReadLine();
                     }
                     pedido.Add(menu[elecion]);

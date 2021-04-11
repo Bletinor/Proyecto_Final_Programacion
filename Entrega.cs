@@ -37,7 +37,7 @@ namespace Proyecto_Final_Programación
             {
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Usted debe insertar el número 1 o 2, dependiendo de su preferencia, para proceder");
+                Console.WriteLine("No es una opción válida");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine();
                 Console.Write("Elección: ");
@@ -64,17 +64,17 @@ namespace Proyecto_Final_Programación
                     Console.WriteLine();
                     Console.Write("Elección: ");
 
-                    forma_delivery = int.Parse(Console.ReadLine());
+                    resultado = Console.ReadLine();
 
-                    while (forma_delivery != 2 && forma_delivery != 1 && forma_delivery != 3)
+                    while (!int.TryParse(resultado, out forma_delivery) | forma_delivery != 2 && forma_delivery != 1 && forma_delivery != 3)
                     {
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Usted debe insertar el número 1, 2 o 3 dependiendo de su preferencia para proceder");
+                        Console.WriteLine("No es una opción válida");
                         Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine();
                         Console.Write("Elección: ");
-                        forma_delivery = int.Parse(Console.ReadLine());
+                        resultado = Console.ReadLine();
                     }
 
 
@@ -111,7 +111,11 @@ namespace Proyecto_Final_Programación
             string resultado = Console.ReadLine();
             while (!int.TryParse(resultado, out numero))
             {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("No es una opción válida");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine();
                 Console.Write("Número: ");
                 resultado = Console.ReadLine();
             }
@@ -135,8 +139,12 @@ namespace Proyecto_Final_Programación
 
             while (decision != "si" & decision != "Si" & decision != "no" & decision != "No")
             {
-                Console.Write("Respuesta no válida ");
-                Console.WriteLine("Se encuentra usted en este país? ");
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("No es una opción válida");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine();
+                Console.Write("Se encuentra usted en este país? ");
                 decision = Console.ReadLine();
             }
 
