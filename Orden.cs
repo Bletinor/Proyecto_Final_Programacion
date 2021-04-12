@@ -90,7 +90,7 @@ namespace Proyecto_Final_Programación
                     costo.Add(precios[elecion]);
                     cantidad.Add(qty);
                     itbis.Add(qty * precios[elecion] * 0.18m);
-                    total.Add(qty * precios[elecion] + itbis[i]);
+                    total.Add(qty * precios[elecion]);
                 }
             }
 
@@ -102,7 +102,7 @@ namespace Proyecto_Final_Programación
                 Console.WriteLine($"{cantidad[i]}x {pedido[i]} a {costo[i]} pesos con {itbis[i]} de ITBIS");
             }
             Console.WriteLine();
-            Console.WriteLine($"El total a pagar es {total.Sum()} pesos");
+            Console.WriteLine($"El total a pagar es {total.Sum() + itbis.Sum()} pesos");
             Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
