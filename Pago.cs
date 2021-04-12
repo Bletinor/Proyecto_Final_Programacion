@@ -26,9 +26,10 @@ namespace Proyecto_Final_Programación
                 Console.WriteLine($"{Orden.cantidad[i]}x {Orden.pedido[i]} a {Orden.costo[i]} pesos con {Orden.itbis[i]} de ITBIS");
             }
             decimal vTotalTodo = Orden.total.Sum();
+            decimal vTotalItbis = Orden.itbis.Sum();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("El total a pagar es: {0}", vTotalTodo);
+            Console.WriteLine("El total a pagar es: {0}", vTotalTodo + vTotalItbis);
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
 
