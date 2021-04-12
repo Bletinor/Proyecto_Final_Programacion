@@ -162,7 +162,7 @@ namespace Proyecto_Final_Programación
 
             if (decision == "si" || decision == "Si")
             {
-                Console.WriteLine("Puede continuar");
+                Console.WriteLine("Puede continuar con su orden");
             }
             else if (decision == "no" || decision == "No")
             {
