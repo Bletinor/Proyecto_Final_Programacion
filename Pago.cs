@@ -291,7 +291,7 @@ ____ ____ _  _ ___  ____ ____ ___  ____ _  _ ___ ____
                 Console.WriteLine($"{Orden.cantidad[i]}x {Orden.pedido[i]} a {Orden.costo[i]} pesos con {Orden.itbis[i]} de ITBIS");
             }
             Console.WriteLine("");
-            Console.WriteLine("Totales RD$: {0}", vTotalTodo);
+            Console.WriteLine("Totales RD$: {0}", vTotalTodo + vTotalItbis);
             Console.WriteLine("");
             Console.WriteLine("Metodo de pago: {0} ", vMetodoDePago);
             Console.WriteLine("");
