@@ -79,8 +79,9 @@ namespace Proyecto_Final_Programación
                         string intolerancia = Orden.Pregunta();
                         Orden.Menu();
                         Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine($"No incluir nada con: {intolerancia}");
-                        Console.ReadKey();
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         Entrega.Decision();
                         Pago.Metodo();
                     }
