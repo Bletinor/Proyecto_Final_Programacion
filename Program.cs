@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Proyecto_Final_Programación
 {
@@ -10,6 +11,7 @@ namespace Proyecto_Final_Programación
     {
         static void Main(string[] args)
         {
+            //Presenta el título en color verde
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(@" 
  ██████  ██████  ██████  ███████ ██████  ███████      █████  ███    ██ ██████       ██████   ██████  
@@ -20,6 +22,8 @@ namespace Proyecto_Final_Programación
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("---------------------------------------------------------------------------");
+
+            //Presenta el menú principal y recibe cual acción se va a realizar
             Console.WriteLine();
             Console.WriteLine("Bienvendio a nuestro restaurante, que desea hacer?");
             Console.WriteLine();
@@ -29,9 +33,11 @@ namespace Proyecto_Final_Programación
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
             Console.Write("Elección: ");
-            int decision; 
+            int decision;
+
+            //Valida el input
             string resultado = Console.ReadLine();
-            while (!int.TryParse(resultado, out decision) | decision <1 | decision > 2)
+            while (!int.TryParse(resultado, out decision) | decision < 1 | decision > 2)
             {
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -48,6 +54,7 @@ namespace Proyecto_Final_Programación
             {
                 case 1:
 
+                    //Pregunta si el cliente es intolerante
                     Console.WriteLine();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Es intolerante o alergico a algún ingrediente? (si o no): ");
@@ -68,6 +75,7 @@ namespace Proyecto_Final_Programación
                     Console.WriteLine();
                     if (intolerante == "si")
                     {
+                        //Realiza el resto del programa tomando en cuenta la intolerancia
                         string intolerancia = Orden.Pregunta();
                         Orden.Menu();
                         Console.WriteLine();
@@ -78,6 +86,7 @@ namespace Proyecto_Final_Programación
                     }
                     else
                     {
+                        //Realiza el resto del programa sin tomar en cuenta ninguna intolerancia
                         Orden.Menu();
                         Entrega.Decision();
                         Pago.Metodo();
@@ -86,17 +95,15 @@ namespace Proyecto_Final_Programación
 
                 case 2:
 
-                    string[] lines = System.IO.File.ReadAllLines(@"C:\Users\publi\source\repos\Proyecto_Final_Programación\Información.txt");
-                    foreach (string line in lines)
-                    {
-                        Console.WriteLine(line);
-                    }
+                    //Lleva al usuario al GitHub
+                    var link = new ProcessStartInfo("iexplore.exe");
+                    link.Arguments = "https://github.com/Bletinor/Proyecto_Final_Programacion";
+                    Process.Start(link);
                     break;
 
                 default:
                     break;
             }
-
         }
     }
 }

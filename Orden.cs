@@ -8,6 +8,7 @@ namespace Proyecto_Final_Programación
 {
     class Orden
     {
+        //Crea las listas de variables necesarias para la factura
         public static List<string> pedido = new List<string>();
         public static List<int> costo = new List<int>();
         public static List<int> cantidad = new List<int>();
@@ -36,7 +37,7 @@ namespace Proyecto_Final_Programación
             string[] numerador = { "index", "1. ", "2. ", "3. ", "4. ", "5. ", "6. ", "7. ", "8. ", "9. ", "10. ", "11. ", "12. ", "13. ", "14. ", "15. ", };
             Console.WriteLine($"{menu[0]}");
             Console.WriteLine();
-            
+
             for (int i = 1; i < menu.Length; i++)
             {
                 Console.WriteLine($"{numerador[i]}{menu[i]}: {precios[i]} pesos");
@@ -46,14 +47,13 @@ namespace Proyecto_Final_Programación
             Console.WriteLine("---------------------------------------------------------------------------");
             Console.WriteLine();
 
-            //Prepara las que tendrán el pedido, el costo y cantidad luego se pasarán a arrays
-            
-
             //Se pide cuales elementos del menú se añadiran al pedido y su cantidad
             for (int i = 0; i != 1;)
             {
                 Console.Write("Ingrese el número de lo que desea ordenar o ingrese 0 para terminar de ordenar: ");
                 int elecion;
+
+                //Valida el input
                 string resultado = Console.ReadLine();
                 while (!int.TryParse(resultado, out elecion) | elecion < 0 | elecion > 15)
                 {
@@ -72,7 +72,9 @@ namespace Proyecto_Final_Programación
                 else
                 {
                     Console.Write("Ingrese la cantidad que desea: ");
-                    int qty; 
+                    int qty;
+
+                    //Valida el input
                     resultado = Console.ReadLine();
                     while (!int.TryParse(resultado, out qty))
                     {
@@ -92,13 +94,16 @@ namespace Proyecto_Final_Programación
                 }
             }
 
+            //Se imprime el pedido
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
             for (int i = 0; i < pedido.Count; i++)
             {
                 Console.WriteLine($"{cantidad[i]}x {pedido[i]} a {costo[i]} pesos con {itbis[i]} de ITBIS");
             }
             Console.WriteLine();
             Console.WriteLine($"El total a pagar es {total.Sum()} pesos");
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
 }

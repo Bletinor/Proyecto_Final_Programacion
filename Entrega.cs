@@ -8,8 +8,9 @@ namespace Proyecto_Final_Programación
 {
     class Entrega
     {
-         public static void Decision()
+        public static void Decision()
         {
+            //Presenta el título del proceso en color verde
             int forma_entrega, forma_delivery;
             string apartamento;
             Console.WriteLine();
@@ -21,6 +22,8 @@ namespace Proyecto_Final_Programación
 ");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("---------------------------------------------------------------------------");
+
+            //Pregunta el método de entrega
             Console.WriteLine();
             Console.WriteLine("Como quiere que se le entregue su pedido: ");
             Console.WriteLine();
@@ -33,6 +36,7 @@ namespace Proyecto_Final_Programación
 
             string resultado = Console.ReadLine();
 
+            //Valida el input
             while (!int.TryParse(resultado, out forma_entrega) | forma_entrega < 1 | forma_entrega > 2)
             {
                 Console.WriteLine();
@@ -46,11 +50,14 @@ namespace Proyecto_Final_Programación
             Console.WriteLine();
             Console.WriteLine("---------------------------------------------------------------------------");
             Console.WriteLine();
+
             switch (forma_entrega)
             {
                 case 1:
+
+                    //Pregunta los datos necesarios para realizar el delivery
                     Console.WriteLine("Inserte los datos de su ubicación: ");
-                    location();
+                    Location();
                     Console.WriteLine();
                     Console.WriteLine("---------------------------------------------------------------------------");
                     Console.WriteLine();
@@ -64,8 +71,8 @@ namespace Proyecto_Final_Programación
                     Console.WriteLine();
                     Console.Write("Elección: ");
 
+                    //Valida el input
                     resultado = Console.ReadLine();
-
                     while (!int.TryParse(resultado, out forma_delivery) | forma_delivery != 2 && forma_delivery != 1 && forma_delivery != 3)
                     {
                         Console.WriteLine();
@@ -90,6 +97,7 @@ namespace Proyecto_Final_Programación
 
                 case 2:
 
+                    //Presenta un tiempo aleatorio en el cual la orden será realizada
                     Random tiempo_espera = new Random();
                     int randomizer = tiempo_espera.Next(25, 30);
                     Console.WriteLine("Su pedido estará listo en: " + randomizer + " minutos una vez complete el pago del mismo");
@@ -100,14 +108,17 @@ namespace Proyecto_Final_Programación
 
         }
 
-        static void location()
+        //Pregunta los datos de la ubicación que se usará en el delivery
+        static void Location()
         {
-            string calle, sector, ciudad, país = "República Dominicana", edificio, decision;
+            string calle, sector, ciudad, edificio, decision;
             int numero;
             Console.Write("Calle: ");
             calle = Console.ReadLine();
 
             Console.Write("Número: ");
+
+            //Valida el input
             string resultado = Console.ReadLine();
             while (!int.TryParse(resultado, out numero))
             {
@@ -137,6 +148,7 @@ namespace Proyecto_Final_Programación
             decision = Console.ReadLine();
             Console.WriteLine();
 
+            //Valida el input
             while (decision != "si" & decision != "Si" & decision != "no" & decision != "No")
             {
                 Console.WriteLine();

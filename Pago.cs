@@ -10,6 +10,7 @@ namespace Proyecto_Final_Programación
     {
         public static void Metodo()
         {
+            //Presenta el título del proceso en color verde
             Console.WriteLine("-------------------------------------------------------------");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(@"____ ____ ____ _  _ ____    ___  ____    ___  ____ ____ ____
@@ -19,22 +20,24 @@ namespace Proyecto_Final_Programación
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("-------------------------------------------------------------");
 
-
+            //Imprime la factura + el total
             for (int i = 0; i < Orden.pedido.Count; i++)
             {
                 Console.WriteLine($"{Orden.cantidad[i]}x {Orden.pedido[i]} a {Orden.costo[i]} pesos con {Orden.itbis[i]} de ITBIS");
             }
             decimal vTotalTodo = Orden.total.Sum();
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("El total a pagar es: {0}", vTotalTodo);
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
 
+            //Pregunta si se usará comprobante fiscal
             string resultado;
-
-
-
             Console.Write("Desea Comprobante Fiscal: ");
             string vComprobante = (Console.ReadLine());
+
+            //Valida el input
             while (vComprobante != "si" & vComprobante != "Si" & vComprobante != "no" & vComprobante != "No")
             {
                 Console.WriteLine();
@@ -47,16 +50,21 @@ namespace Proyecto_Final_Programación
             }
             if (vComprobante == "Si" || vComprobante == "si")
             {
+                //Pide como ingreso e RNC
                 Console.WriteLine();
                 Console.WriteLine("Ingrese RNC: ");
                 string vRNC = (Console.ReadLine());
             }
             Console.WriteLine();
+
+            //Pregunta el método de pago
             Console.WriteLine("Como desea Pagar");
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("1. Efectivo");
             Console.WriteLine("2. Tarjeta");
             Console.WriteLine("3. Transferencia");
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
 
             string vNombreCliente = "";
@@ -65,7 +73,9 @@ namespace Proyecto_Final_Programación
             Console.Write("Elección: ");
             resultado = Console.ReadLine();
             Console.WriteLine();
-            while (!double.TryParse(resultado, out vOpcion) & vOpcion < 1 & vOpcion >3)
+
+            //Valida el input
+            while (!double.TryParse(resultado, out vOpcion) & vOpcion < 1 & vOpcion > 3)
             {
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -78,6 +88,7 @@ namespace Proyecto_Final_Programación
 
             switch (vOpcion)
             {
+                //Método de pago con efectivo
                 case (1):
                     Console.WriteLine("--------------");
                     Console.Write("Quien realiza el pago: ");
@@ -86,8 +97,9 @@ namespace Proyecto_Final_Programación
 
                     Console.Write("Ingrese con cuanto va a pagar: ");
                     int vPago;
-                    resultado= Console.ReadLine();
+                    resultado = Console.ReadLine();
 
+                    //Valida el input
                     while (!int.TryParse(resultado, out vPago) & vPago < vTotalTodo)
                     {
                         Console.WriteLine();
@@ -98,7 +110,10 @@ namespace Proyecto_Final_Programación
                     int devuelta = (int)(vPago - vTotalTodo);
 
                     Console.WriteLine();
-                    Console.WriteLine("     DEVUELTA");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("DEVUELTA");
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Gray;
                     int[] vMoneda = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
                     if (devuelta > 2000)
                     {
@@ -160,21 +175,26 @@ namespace Proyecto_Final_Programación
                         devuelta -= (vMoneda[9] * 1);
                         Console.WriteLine("Monedas de 1: " + vMoneda[9]);
                     }
-
+                    Console.WriteLine();
                     break;
                 case (2):
+
+                    //Método de pago con tarjeta
                     Console.WriteLine("--------------");
-                    Console.WriteLine("A nombre de quien esta la tarjeta: ");
+                    Console.Write("A nombre de quien esta la tarjeta: ");
                     vNombreCliente = Console.ReadLine();
                     Console.WriteLine();
-                    Console.WriteLine("Ingrese su numero de tarjeta: ");
+                    Console.Write("Ingrese su numero de tarjeta: ");
                     string vNumeroT = (Console.ReadLine());
                     Console.WriteLine();
                     string Text = vNumeroT.Substring(0, 1);
                     Console.WriteLine("Ingrese la fecha de vencimiento: ");
-                    string vFechaVen = (Console.ReadLine());
+                    Console.Write("Día: ");
+                    string vDiaVen = (Console.ReadLine());
+                    Console.Write("Año:");
+                    string vAnoVen = (Console.ReadLine());
                     Console.WriteLine();
-                    Console.WriteLine("Ingrese codigo de seguridad: : ");
+                    Console.Write("Ingrese codigo de seguridad: : ");
                     string vCodigoSeg = (Console.ReadLine());
                     Console.WriteLine();
 
@@ -189,6 +209,8 @@ namespace Proyecto_Final_Programación
                     break;
 
                 case (3):
+
+                    //Método de pago con transferencia
                     Console.WriteLine("--------------");
                     Console.WriteLine("Porfavor depositar al siguiente numero: 1934900049 para Orders and Go");
                     Console.WriteLine("--------------");
@@ -197,12 +219,16 @@ namespace Proyecto_Final_Programación
                     int vPagoT;
                     resultado = Console.ReadLine();
                     Console.WriteLine();
+
+                    //Valida el input
                     while (!int.TryParse(resultado, out vPagoT))
                     {
                         Console.WriteLine("No es una opción válida");
                         Console.Write("Elección: ");
                         resultado = Console.ReadLine();
                     }
+
+                    //Calcula cuanto falta para poder pagar la factura
                     while (vPagoT < vTotalTodo)
                     {
                         Console.WriteLine("Le faltan: {0} pesos", (vTotalTodo - vPagoT));
@@ -222,15 +248,23 @@ namespace Proyecto_Final_Programación
 
             //Aprovacion del pago
             Console.WriteLine("----------------------------------------------------------");
-            Console.WriteLine("");
+            Console.WriteLine(@"
+____ ____ _  _ ___  ____ ____ ___  ____ _  _ ___ ____    
+|    |  | |\/| |__] |__/ |  | |__] |__| |\ |  |  |___    
+|___ |__| |  | |    |  \ |__| |__] |  | | \|  |  |___ ");
+            Console.WriteLine("----------------------------------------------------------");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("ESTIMADO: {0}", vNombreCliente);
-            Console.WriteLine("");
+            Console.WriteLine();
             Console.WriteLine("Le notificamos que su a sido procesado de manera exitosa");
             Console.WriteLine("Adjunto encontrara su comprobante de pago");
-            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine();
 
             //Factura Final
             string vMetodoDePago;
+            Console.ForegroundColor = ConsoleColor.Red;
             if (vOpcion == 1)
             {
                 vMetodoDePago = "Efectivo";
@@ -244,12 +278,12 @@ namespace Proyecto_Final_Programación
                 vMetodoDePago = "Tranferecia";
             }
 
-            Console.WriteLine("   ORDERS & GO");
-            Console.WriteLine(" Comprobante de pago");
-
+            Console.WriteLine("ORDERS & GO");
+            Console.WriteLine("Comprobante de pago");
+            Console.WriteLine();
 
             Console.WriteLine("Recibimos de: {0} ", vNombreCliente);
-            Console.WriteLine("");
+            Console.WriteLine();
             Console.WriteLine("La suma de: ");
             for (int i = 0; i < Orden.pedido.Count; i++)
             {
@@ -269,6 +303,7 @@ namespace Proyecto_Final_Programación
             Console.WriteLine("");
             Console.WriteLine("Gracias Por Preferir Nuestros Servicios!");
             Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.Red;
         }
     }
 }
