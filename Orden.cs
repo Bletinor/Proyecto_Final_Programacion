@@ -17,7 +17,9 @@ namespace Proyecto_Final_Programación
         static public string Pregunta()
         {
             //Pregunta si es intolerante y lo devuelve para guardarlo en una variable
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("A que es intolerante?: ");
+            Console.ForegroundColor = ConsoleColor.Gray;
             string intolerancia = Console.ReadLine();
             Console.WriteLine();
 
