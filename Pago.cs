@@ -205,7 +205,7 @@ namespace Proyecto_Final_Programación
                     }
                     else if (Text == "5")
                     {
-                        Console.WriteLine("Tarjeta Matercard Aceptada");
+                        Console.WriteLine("Tarjeta Mastercard Aceptada");
                     }
                     break;
 
