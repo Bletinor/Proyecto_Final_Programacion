@@ -12,3 +12,10 @@ C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\obj\Debug\Proyecto_F
 C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.csproj.CoreCompileInputs.cache
 C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.exe
 C:\Users\publi\Documents\GitHub\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.pdb
+C:\Users\DELL\Documents\GIT GRUPO\Proyecto_Final_Programacion\bin\Debug\Proyecto_Final_Programación.exe.config
+C:\Users\DELL\Documents\GIT GRUPO\Proyecto_Final_Programacion\bin\Debug\Proyecto_Final_Programación.exe
+C:\Users\DELL\Documents\GIT GRUPO\Proyecto_Final_Programacion\bin\Debug\Proyecto_Final_Programación.pdb
+C:\Users\DELL\Documents\GIT GRUPO\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.csprojAssemblyReference.cache
+C:\Users\DELL\Documents\GIT GRUPO\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Documents\GIT GRUPO\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.exe
+C:\Users\DELL\Documents\GIT GRUPO\Proyecto_Final_Programacion\obj\Debug\Proyecto_Final_Programación.pdb

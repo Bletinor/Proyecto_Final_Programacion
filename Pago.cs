@@ -51,7 +51,7 @@ namespace Proyecto_Final_Programación
             }
             if (vComprobante == "Si" || vComprobante == "si")
             {
-                //Pide como ingreso e RNC
+                //Pide como ingreso el RNC
                 Console.WriteLine();
                 Console.WriteLine("Ingrese RNC: ");
                 string vRNC = (Console.ReadLine());
@@ -91,8 +91,8 @@ namespace Proyecto_Final_Programación
             {
                 //Método de pago con efectivo
                 case (1):
-                    Console.WriteLine("--------------");
-                    Console.Write("Quien realiza el pago: ");
+                    Console.WriteLine("----------------------------------");
+                    Console.Write("Nombre de quien realiza el pago: ");
                     vNombreCliente = Console.ReadLine();
                     Console.WriteLine("");
 
@@ -298,7 +298,7 @@ ____ ____ _  _ ___  ____ ____ ___  ____ _  _ ___ ____
 
             Console.WriteLine("Para cualquier duda o solicitud adicional puede contactarnos por estas vias: ");
             Console.WriteLine("");
-            Console.WriteLine("   ORDERS & GO");
+            Console.WriteLine("ORDERS & GO");
             Console.WriteLine("TELEFONO: 809-534-0663");
             Console.WriteLine("CORREO: Ordes&Go@support.com");
             Console.WriteLine("");
