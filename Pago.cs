@@ -53,7 +53,7 @@ namespace Proyecto_Final_Programación
             {
                 //Pide como ingreso el RNC
                 Console.WriteLine();
-                Console.WriteLine("Ingrese RNC: ");
+                Console.Write("Ingrese RNC: ");
                 string vRNC = (Console.ReadLine());
             }
             Console.WriteLine();
@@ -250,8 +250,8 @@ namespace Proyecto_Final_Programación
             //Aprovacion del pago
             Console.WriteLine("----------------------------------------------------------");
             Console.WriteLine(@"
-____ ____ _  _ ___  ____ ____ ___  ____ _  _ ___ ____    
-|    |  | |\/| |__] |__/ |  | |__] |__| |\ |  |  |___    
+____ ____ _  _ ___  ____ ____ ___  ____ _  _ ___ ____
+|    |  | |\/| |__] |__/ |  | |__] |__| |\ |  |  |___
 |___ |__| |  | |    |  \ |__| |__] |  | | \|  |  |___ ");
             Console.WriteLine("----------------------------------------------------------");
             Console.WriteLine();
